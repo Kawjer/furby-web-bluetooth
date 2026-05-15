@@ -15,12 +15,10 @@
         ]
     },
     {
-        "file": "tu002560.dlc", 
-        "title": "Toy Week 5 Dlc",
+        "file": "noimg2.dlc", 
+        "title": "Audio only",
         "buttons": [
-            { "title": "My House Song", "action": [75,0,3,4] },
-            { "title": "Nunchucks", "action": [75,0,2,2] },
-            { "title": "Cat takes a Bath", "action": [75,0,2,3] }
+            { "title": "Audio test ", "action": [75,0,4,4] }
         ]
     },
     {
