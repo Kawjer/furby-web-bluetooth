@@ -10,8 +10,8 @@
         "file": "fu001680.dlc", 
         "title": "Firmware Possibly",
         "buttons": [
-            { "title": "This also does nothing", "action": [75,0,3,4] },
-            { "title": "This does nothing", "action": [75,0,4,4] }
+            { "title": "Hacked 1", "action": [75,0,3,4] },
+            { "title": "Hacked 2", "action": [75,0,4,4] }
         ]
     },
     {
