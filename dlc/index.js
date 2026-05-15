@@ -20,8 +20,7 @@
         "buttons": [
             { "title": "My House Song", "action": [75,0,3,4] },
             { "title": "Nunchucks", "action": [75,0,2,2] },
-            { "title": "Cat takes a Bath", "action": [75,0,2,3] },
-            { "title": "Nunchucks", "action": [75,0,2,2] }
+            { "title": "Cat takes a Bath", "action": [75,0,2,3] }
         ]
     },
     {
