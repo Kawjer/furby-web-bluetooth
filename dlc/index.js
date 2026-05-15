@@ -10,15 +10,18 @@
         "file": "fu001680.dlc", 
         "title": "Firmware Possibly",
         "buttons": [
-            { "title": "Hacked 1", "action": [75,0,3,4] },
-            { "title": "Hacked 2", "action": [75,0,4,4] }
+            { "title": "This also does nothing", "action": [75,0,3,4] },
+            { "title": "This does nothing", "action": [75,0,4,4] }
         ]
     },
     {
-        "file": "noimg2.dlc", 
-        "title": "Audio only",
+        "file": "tu002560.dlc", 
+        "title": "Toy Week 5 Dlc",
         "buttons": [
-            { "title": "Audio test ", "action": [75,0,4,4] }
+            { "title": "My House Song", "action": [75,0,3,4] },
+            { "title": "Nunchucks", "action": [75,0,2,2] },
+            { "title": "Cat takes a Bath", "action": [75,0,2,3] },
+            { "title": "Nunchucks", "action": [75,0,2,2] },
         ]
     },
     {
