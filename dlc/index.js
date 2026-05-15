@@ -1,7 +1,7 @@
 [
     { 
-        "file": "context.dlc", 
-        "title": "Context Logo",
+        "file": "tr002590.dlc", 
+        "title": "Glitchy DLC",
         "buttons": [
             { "title": "Logo", "action": [75,0,4,4] }
         ]
