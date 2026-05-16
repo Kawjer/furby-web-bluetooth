@@ -15,10 +15,10 @@
         ]
     },
     {
-        "file": "noimg2.dlc", 
-        "title": "Audio only",
+        "file": "tr021370.dlc", 
+        "title": "Furble Roulette",
         "buttons": [
-            { "title": "Audio test ", "action": [75,0,4,4] }
+            { "title": "Furble Roulette", "action": [75,0,4,4] }
         ]
     },
     {
