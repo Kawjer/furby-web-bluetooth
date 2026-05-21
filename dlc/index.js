@@ -259,5 +259,75 @@
     "file": "tr011090.dlc",
     "title": "DLC 50",
     "buttons": [{ "title": "tr011090", "action": [75,0,13,0] }]
+  },
+  {
+    "file": "tr002590.dlc",
+    "title": "Staging DLC 1",
+    "buttons": [{ "title": "tr002590", "action": [75,0,12,6] }]
+  },
+  {
+    "file": "tr010610.dlc",
+    "title": "Staging DLC 2",
+    "buttons": [{ "title": "tr010610", "action": [75,0,12,7] }]
+  },
+  {
+    "file": "tr010970.dlc",
+    "title": "Staging DLC 3",
+    "buttons": [{ "title": "tr010970", "action": [75,0,12,8] }]
+  },
+  {
+    "file": "tr011040.dlc",
+    "title": "Staging DLC 4",
+    "buttons": [{ "title": "tr011040", "action": [75,0,12,9] }]
+  },
+  {
+    "file": "tr011090.dlc",
+    "title": "Staging DLC 5",
+    "buttons": [{ "title": "tr011090", "action": [75,0,13,0] }]
+  },
+  {
+    "file": "tr011100.dlc",
+    "title": "Staging DLC 6",
+    "buttons": [{ "title": "tr011100", "action": [75,0,9,0] }]
+  },
+  {
+    "file": "tr011870.dlc",
+    "title": "Staging DLC 7",
+    "buttons": [{ "title": "tr011870", "action": [75,0,13,1] }]
+  },
+  {
+    "file": "tu002560.dlc",
+    "title": "Staging DLC 8",
+    "buttons": [{ "title": "tu002560", "action": [75,0,8,5] }]
+  },
+  {
+    "file": "tu010600.dlc",
+    "title": "Staging DLC 9",
+    "buttons": [{ "title": "tu010600", "action": [75,0,8,6] }]
+  },
+  {
+    "file": "tu010950.dlc",
+    "title": "Staging DLC 10",
+    "buttons": [{ "title": "tu010950", "action": [75,0,8,7] }]
+  },
+  {
+    "file": "tu011010.dlc",
+    "title": "Staging DLC 11",
+    "buttons": [{ "title": "tu011010", "action": [75,0,8,8] }]
+  },
+  {
+    "file": "tu011090.dlc",
+    "title": "Staging DLC 12",
+    "buttons": [{ "title": "tu011090", "action": [75,0,8,9] }]
+  },
+  {
+    "file": "tu011100.dlc",
+    "title": "Staging DLC 13",
+    "buttons": [{ "title": "tu011100", "action": [75,0,9,0] }]
+  },
+  {
+    "file": "tu011840.dlc",
+    "title": "Staging DLC 14",
+    "buttons": [{ "title": "tu011840", "action": [75,0,9,1] }]
   }
 ]
