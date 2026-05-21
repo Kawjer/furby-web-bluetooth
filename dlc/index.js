@@ -331,7 +331,6 @@
     "title": "Staging DLC 14 [tu011840]",
     "buttons": [{ "title": "tu011840", "action": [75,0,9,1] }]
   },
-
 {
   "file": "tu003150.dlc",
   "title": "Chilli Commerical [tu003150]",
