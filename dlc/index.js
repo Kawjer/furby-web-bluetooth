@@ -3,22 +3,22 @@
         "file": "tr002590.dlc", 
         "title": "Glitchy DLC",
         "buttons": [
-            { "title": "No Action", "action": [75,0,4,4] }
+            { "title": "Logo", "action": [75,0,4,4] }
         ]
     },
     { 
         "file": "tu003150.dlc", 
         "title": "Commercial",
         "buttons": [
-            { "title": "Action 1", "action": [12,0,0,9] },
-            { "title": "Action 2", "action": [12,0,0,10] }
+            { "title": "Hacked 1", "action": [75,0,3,4] },
+            { "title": "Hacked 2", "action": [75,0,4,4] }
         ]
     },
     {
         "file": "tu003410.dlc", 
         "title": "Songs",
         "buttons": [
-            { "title": "Audio test 1", "action": [75,0,0,0] }
+            { "title": "Audio test ", "action": [75,0,4,4] }
         ]
     },
     {
