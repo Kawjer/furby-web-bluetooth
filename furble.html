@@ -8,10 +8,8 @@
 </head>
 <body>
 
-<!-- for slide-in status messages -->
 <div id='status' class='ok'>Connected to Furby!</div>
 
-<!-- menu button and menu -->
 <button id='hamburger'>☰</button>
 <div id='menu'>
     <h2>Kawjer's FurBLE</h2>
@@ -21,15 +19,16 @@
         <li><a href='#dlc'>DLC Upload</a></li>
         <li><a href='#sensors'>Sensors</a></li>
         <li><a href='#debug'>Debug</a></li>
+        <li><a href='#personality'>Personality</a></li>
     </ul>
 </div>
 
-
 <div class='header'>
-        <button id='connbtn' onclick='doConnectDisconnect()'>Connect to Furby</button>
-    <div><h1>Kawjer's FurBLE</h1>
-    <span id='state'>Not connected to Furby</span></div>
-    
+    <button id='connbtn' onclick='doConnectDisconnect()'>Connect to Furby</button>
+    <div>
+        <h1>Kawjer's FurBLE</h1>
+        <span id='state'>Not connected to Furby</span>
+    </div>
 </div>
 
 <div id='furby-buttons'>
@@ -81,140 +80,50 @@
 
     <section id='sensors'>
         <h2>Sensors</h2>
-        <!--<div class='row'>
-                <button onclick='sendGPCmd([0x20, 0x0d])'>Start continuous</button>
-                <button onclick='sendGPCmd([0x20, 0x0e])'>Stop continuous</button>
-        </div>
-        <h2>State</h2>-->
         <ul id='sensor-state'><li>Waiting for connection...</li></ul>
     </section>
 
-    <section id='no-web-bluetooth'>
-        <h3>Sorry, this browser doesn't seem to support Web Bluetooth. Works best with Chrome for Android.</h3>
+    <!-- ✅ PERSONALITY SECTION (CORRECTLY PLACED) -->
+    <section id='personality'>
+        <h2>Personality</h2>
+
+        <div class='row'>
+            <button onclick='personalityDown()'>Personality -1</button>
+            <button onclick='personalityUp()'>Personality +1</button>
+        </div>
+
+        <div class='row'>
+            <span>Controls Furby mood via antenna color</span>
+        </div>
     </section>
+
+    <section id='no-web-bluetooth'>
+        <h3>Sorry, this browser doesn't seem to support Web Bluetooth.</h3>
+    </section>
+
 </div>
 
-
 <div id="console">
-    <button onclick='log2clipboard()' class='clip'>Copy to Clipboard</button> <h3 onclick='toggleConsole()'>Log Output</h3>
-<div id="out" style="white-space:pre"></div>
+    <button onclick='log2clipboard()'>Copy to Clipboard</button>
+    <h3 onclick='toggleConsole()'>Log Output</h3>
+    <div id="out" style="white-space:pre"></div>
 </div>
 
 <script>
 var dlcsel = document.getElementById('dlcname');
+
 var s = document.createElement('script');
 s.src = 'furble.js?' + Math.random();
 document.body.appendChild(s);
-s.onload = () => {
-    log('ready!');
-    enableButtons(false);
-    updateCurrentSection();
-    loadDLCIndex();
-}
-    
-var out = document.getElementById('out');
-out.addEventListener('transitionend', e => out.scrollTop=out.scrollHeight);
+
 function toggleConsole() {
     document.getElementById('console').classList.toggle('expanded');
 }
 
-document.querySelectorAll('input[type=number]').forEach(el => {
-    el.addEventListener('focus', () => {
-        el.select();
-        document.body.classList.add('keyboard');
-    });
-    el.addEventListener('blur', el => document.body.classList.remove('keyboard'));
-})
-
-function showStatus(msg, cls) {
-    let el = document.getElementById('status');
-    el.className = '';
-    el.classList.add('on');
-    el.classList.add(cls);
-    el.textContent = msg;
-    setTimeout(() => el.classList.remove('on'), 1500);
-    log(cls + ': ' + msg);
-}
-
 var msg = {
-    ok: s => showStatus(s, 'ok'),
-    error: s => showStatus(s, 'error'),
+    ok: s => console.log("OK:", s),
+    error: s => console.log("ERROR:", s)
 };
-
-function updateCurrentSection() {
-    let current = location.hash.substr(1);
-    if (current == '') current = 'dlc';
-    if ('bluetooth' in navigator === false) 
-        current = 'no-web-bluetooth';
-    showSection(current);
-}
-
-window.onhashchange = updateCurrentSection; 
-let currentSection = '';
-let dlcdata = {};
-
-
-function showSection(section) {
-    if (currentSection) {
-        try {
-            document.querySelector('section#' + currentSection).classList.remove('current');
-            document.querySelector(`a[href="#${currentSection}`).classList.remove('current');
-        } catch (e) {}
-        
-    }
-    currentSection = section;
-    document.querySelector('section#' + currentSection).classList.add('current');
-    document.querySelector(`a[href="#${currentSection}`).classList.add('current');
-}
-
-async function loadDLCIndex() {
-    let resp = await fetch('dlc/index.js');
-    let data = await resp.json();
-
-    for (let dlc of data) {
-        let opt = document.createElement('option');
-        if (dlc.file.length > 12) {
-            log('DLC filename must be <= 12 chars, got ' + dlc.file);
-        }
-            
-        dlcdata[dlc.file] = dlc;
-        opt.value = dlc.file;
-        opt.textContent = dlc.title;
-        dlcsel.appendChild(opt);
-    }
-}
-
-async function dlcUploadClicked() {
-    let dlcfile = dlcsel.options[dlcsel.selectedIndex].value;
-    let params = dlcdata[dlcfile];
-    console.log('DLC upload clicked', params);
-    await fetchAndUploadDLC('dlc/'+dlcfile);
-    setupDLCButtons(params);
-    showSection('actions');
-}
-
-function setupDLCButtons(dlcParams) {
-    let container = document.getElementById('dlc-actions');
-    container.childNodes.forEach(el => el.parentNode.removeChild(el));
-    dlcParams.buttons.forEach(p => {
-        let button = document.createElement('button');
-        button.textContent = p.title;
-        button.onclick = () => {
-            log('Triggering ' + p.title + ' for dlc ' + dlcParams.file);
-            triggerAction.apply(null, p.action);
-        };
-        container.appendChild(button);
-    });
-}
-
-function log2clipboard() {
-    let range = document.createRange();
-    range.selectNode(out);
-    window.getSelection().addRange(range);
-    document.execCommand('copy');
-    msg.ok('Copied to clipboard');
-}
-
 </script>
 
 </body>
