@@ -335,14 +335,12 @@
     "file": "tu003150.dlc",
     "title": "Chilli Commerical [tu003150]",
     "buttons": [
-      { "title": "tu003150", "action": [75,0,13,2] }
-    ]
+      { "title": "tu003150", "action": [75,0,13,2] }]
   },
   {
     "file": "tu003410.dlc",
     "title": "Staging DLC 15 [tu003410]",
     "buttons": [
-      { "title": "tu003410", "action": [75,0,13,3] }
-    ]
+      { "title": "tu003410", "action": [75,0,13,3] }]
   }
 ]
