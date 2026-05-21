@@ -1,31 +1,31 @@
 [
     { 
-        "file": "context.dlc", 
-        "title": "Context Logo",
+        "file": "tu003150.dlc.dlc", 
+        "title": "Commercial DLC",
         "buttons": [
-            { "title": "Logo", "action": [75,0,4,4] }
+            { "title": "Commercial", "action": [15,0,0,10] }
         ]
     },
     { 
-        "file": "hacked.dlc", 
-        "title": "HACKED",
+        "file": "tu003410.dlc", 
+        "title": "Songs (studying it rn)",
         "buttons": [
-            { "title": "Hacked 1", "action": [75,0,3,4] },
-            { "title": "Hacked 2", "action": [75,0,4,4] }
+            { "title": "Song", "action": [75,0,0,3] },
+            { "title": "Song 1", "action": [75,0,0,4] }
         ]
     },
     {
-        "file": "noimg2.dlc", 
-        "title": "Audio only",
+        "file": "tr002590.dlc", 
+        "title": "Glitchy DLC",
         "buttons": [
-            { "title": "Audio test ", "action": [75,0,4,4] }
+            { "title": "No Action", "action": [75,0,4,4] }
         ]
     },
     {
-        "file": "chilli.dlc", 
-        "title": "Chilli",
+        "file": "fu001680.dlc", 
+        "title": "Firmware",
         "buttons": [
-            { "title": "Chilli ", "action": [75,0,4,4] }
+            { "title": "No Action, just up to date.", "action": [75,0,4,4] }
         ]
     }
 ]
