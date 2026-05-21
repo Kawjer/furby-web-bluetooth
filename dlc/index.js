@@ -1,6 +1,6 @@
 [
     { 
-        "file": "tu003150.dlc.dlc", 
+        "file": "tu003150.dlc", 
         "title": "Commercial DLC",
         "buttons": [
             { "title": "Commercial", "action": [15,0,0,10] }
