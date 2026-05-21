@@ -1,14 +1,14 @@
 [
   { 
     "file": "tr002590.dlc", 
-    "title": "DLC 1",
+    "title": "Glitchy DLC",
     "buttons": [
       { "title": "Logo", "action": [75,0,8,0] }
     ]
   },
   { 
     "file": "fu001680.dlc", 
-    "title": "DLC 2",
+    "title": "Firmware Update",
     "buttons": [
       { "title": "Hacked 1", "action": [75,0,8,1] },
       { "title": "Hacked 2", "action": [75,0,8,2] }
@@ -16,14 +16,14 @@
   },
   {
     "file": "tr021370.dlc", 
-    "title": "DLC 3",
+    "title": "Furble Roulette",
     "buttons": [
       { "title": "Furble Roulette", "action": [75,0,8,3] }
     ]
   },
   {
     "file": "chilli.dlc", 
-    "title": "DLC 4",
+    "title": "Chilli DLC",
     "buttons": [
       { "title": "Chilli", "action": [75,0,8,4] }
     ]
