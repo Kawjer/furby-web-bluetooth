@@ -15,15 +15,15 @@
     ]
   },
   {
-    "file": "tr021370.dlc",
-    "title": "Furble Roulette [tr021370]",
+    "file": "tu003150.dlc",
+    "title": "Commercial [tu003150]",
     "buttons": [
       { "title": "Furble Roulette", "action": [75,0,8,3] }
     ]
   },
   {
-    "file": "chilli.dlc",
-    "title": "Chilli DLC [chilli]",
+    "file": "tu003410.dlc",
+    "title": "No Idea [tu003410]",
     "buttons": [
       { "title": "Chilli", "action": [75,0,8,4] }
     ]
@@ -330,17 +330,5 @@
     "file": "tu011840.dlc",
     "title": "Staging DLC 14 [tu011840]",
     "buttons": [{ "title": "tu011840", "action": [75,0,9,1] }]
-  },
-  {
-    "file": "tu003150.dlc",
-    "title": "Chilli Commerical [tu003150]",
-    "buttons": [
-      { "title": "tu003150", "action": [75,0,13,2] }]
-  },
-  {
-    "file": "tu003410.dlc",
-    "title": "Staging DLC 15 [tu003410]",
-    "buttons": [
-      { "title": "tu003410", "action": [75,0,13,3] }]
   }
 ]
