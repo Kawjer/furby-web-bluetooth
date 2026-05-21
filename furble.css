@@ -1,124 +1,138 @@
-@charset "utf-8";
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Kawjer's Furby Web Bluetooth [CUSTOM]</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='furble.css'>
 
-:root {
-    --bg-primary: rgb(243, 0, 170);
+    <style>
+        #app {
+            animation: rainbowHue 30s linear infinite;
+        }
+
+        @keyframes rainbowHue {
+            from {
+                filter: hue-rotate(0deg);
+            }
+            to {
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="app">
+
+<!-- for slide-in status messages -->
+<div id='status' class='ok'>Connected to Furby!</div>
+
+<!-- menu button and menu -->
+<button id='hamburger'>☰</button>
+<div id='menu'>
+    <h2>FurBLE Custom</h2>
+    <ul>
+        <li><a href='#actions'>Actions</a></li>
+        <li><a href='#misc'>Misc</a></li>
+        <li><a href='#dlc'>DLC Upload</a></li>
+        <li><a href='#sensors'>Sensors</a></li>
+        <li><a href='#debug'>Debug</a></li>
+    </ul>
+</div>
+
+<div class='header'>
+    <button id='connbtn' onclick='doConnectDisconnect()'>Connect Furby</button>
+    <div>
+        <h1>FurBLE Custom</h1>
+        <span id='state'>Not connected to Furby</span>
+    </div>
+</div>
+
+<div id='furby-buttons'>
+
+    <section id='misc'>
+        <h2>Antenna Colour</h2>
+        <div class='row'>
+            <button onclick='setAntennaColor(255, 0, 0)'>Red</button>
+            <button onclick='setAntennaColor(255, 127, 0)'>Orange</button>
+            <button onclick='setAntennaColor(255, 255, 0)'>Yellow</button>
+            <button onclick='setAntennaColor(0, 255, 0)'>Green</button>
+            <button onclick='setAntennaColor(0, 0, 255)'>Blue</button>
+            <button onclick='setAntennaColor(75, 0, 130)'>Indigo</button>
+            <button onclick='setAntennaColor(148, 0, 211)'>Violet</button>
+            <button onclick='setAntennaColor(255, 255, 255)'>White</button>
+        </div>
+    </section>
+
+    <section id='actions'>
+        <h2>Action Sequences</h2>
+        <div class='row' id='dlc-actions'></div>
+
+        <div class='row'>
+            <button onclick='triggerAction(39,3,8,1)'>Legendary!</button>
+            <button onclick='triggerAction(39,4,6,1)'>Nice</button>
+            <button onclick='triggerAction(39,3,1,1)'>Hey, hey</button>
+        </div>
+
+        <div class='row'>
+            <input type='number' min='0' max='75' name='furby-action' value='39'>
+            <input type='number' min='0' max='4' name='furby-action' value='0'>
+            <input type='number' min='0' max='30' name='furby-action' value='0'>
+            <input type='number' min='0' max='10' name='furby-action' value='0'>
+            <button onclick='customAction()'>Send</button>
+        </div>
+    </section>
+
+    <section id='debug'>
+        <h2>Debug</h2>
+        <div class='row'>
+            <button onclick='cycleDebug()'>Eye Debug</button>
+            <button onclick='enableEyes(false)'>Eyes off</button>
+            <button onclick='enableEyes(true)'>Eyes on</button>
+        </div>
+    </section>
+
+    <section id='dlc'>
+        <h2>DLC Files</h2>
+        <div class='row'>
+            <select id='dlcname'></select>
+            <button onclick='dlcUploadClicked()'>Upload</button>
+        </div>
+        <progress id='dlcprogress'></progress>
+    </section>
+
+    <section id='sensors'>
+        <h2>Sensors</h2>
+        <ul id='sensor-state'>
+            <li>Waiting for connection...</li>
+        </ul>
+    </section>
+
+</div>
+
+<div id="console">
+    <button onclick='log2clipboard()' class='clip'>Copy to Clipboard</button>
+    <h3 onclick='toggleConsole()'>Log Output</h3>
+    <div id="out" style="white-space:pre"></div>
+</div>
+
+</div> <!-- end #app -->
+
+<script>
+var dlcsel = document.getElementById('dlcname');
+var s = document.createElement('script');
+s.src = 'furble.js?' + Math.random();
+document.body.appendChild(s);
+
+s.onload = () => {
+    log('ready!');
+    enableButtons(false);
+    updateCurrentSection();
+    loadDLCIndex();
 }
+</script>
 
-body { font-family: sans }
-#sensors li { font-size: 20pt }
-button, input, select { font-size: 14pt }
-input[type=number] { font-size: 20pt }
-.row { display: flex; margin: .6em 0; align-items: center }
-.row button, .row input, .row select { flex-grow: 1; margin: .2em; height: 3em}
-body *  { user-select: none }
-
-#console { 
-    position: fixed; 
-    bottom: 0; left: 0; 
-    background: #eee; 
-    left:0;
-    right: 0;
-    padding: 0.5em;
-    padding-top: 0;
-    user-select: all;
-}
-
-#console > h3::before { content: '+'; display: inline-block; margin: 0 .5em; padding: 0; width: 1em }
-#console.expanded > h3::before { content: '—' }
-
-#out {
-    overflow-y: scroll; 
-    height:2em;
-    transition-property: height;
-    transition-duration: 0.3s;
-    user-select: all;
-}
-
-#console.expanded #out {
-    height: 25em; 
-}
-
-button#hamburger { 
-    background-color: transparent;
-    border: none;
-    font-size: 25pt;
-    padding: .3em .8em;
-    color: white;
-    font-weight: bold;
-    float: left; 
-    margin-left: -18px; 
-    -margin-top: -10px;
-    margin-right: -10px }
-body.keyboard #console { display: none }
-
-#console h2 { margin: 0; padding: 0 }
-#console .clip { float: right; display: none }
-#console.expanded .clip { display: inline-block }
-
-h1 { font-size: 15pt; margin: 0 0 0.3em 0}
-progress { width: 100%; display:none }
-
-.header  { color: white; 
-    background-color: var(--bg-primary); 
-    margin:-.5em -.5em 1em -.5em; 
-    height: 3.5em;
-    padding: .5em;
-}
-.header button { float: right; width: 30%; float: top; height: 3em }
-#status { 
-    position: absolute; 
-    font-size: 20pt;
-    top:0;
-    left:0; 
-    right: 0;
-    padding: .2em;
-    color: white;
-    text-align: center;
-    box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
-    transform: translateX(-100%);
-    transition-property: transform;
-    transition-duration: 0.3s;
-}
-#status.on { transform: translateX(0);}
-#status.error { background-color: rgb(226, 52, 52) }
-#status.ok { background-color: rgb(53, 185, 0) }
-
-#menu { 
-    position: fixed; 
-    left: 0; 
-    top: 0; 
-    bottom: 0; 
-    color: white;
-    background-color: var(--bg-primary); 
-    
-    transform: translateX(-100%);
-    transition-property: transform;
-    transition-duration: 0.3s;
-}
-
-#menu h2 { padding: 0em 2em }
-#menu a { 
-    color: white; 
-    font-weight: bold;
-    text-decoration: none; 
-    display: block; 
-    padding: 1em 2em;
-}
-
-#menu a.current { 
-    background-color: white;
-    color: darkblue;
-}
-
-#hamburger:focus + #menu { 
-    transform: translateX(0);
-    box-shadow: 5px 0px 5px rgba(0,0,0,0.3);
-}
-#menu ul { padding: 0 }
-#menu li { list-style: none; padding: 0; margin: 0}
-
-section { display: none}
-
-section.current { display: block }
-
-#actions input[type=number] { width: 2em; text-align: center; border: 2px solid var(--bg-primary); height: 2em}
+</body>
+</html>
