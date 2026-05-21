@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 :root {
-    --bg-primary: rgb(243, 0, 170);
+    --bg-primary: rgb(255, 165, 0);
 }
 
 body { font-family: sans }
