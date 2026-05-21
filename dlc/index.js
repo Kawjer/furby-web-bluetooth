@@ -335,7 +335,7 @@
   "file": "tu003150.dlc",
   "title": "Chilli Commerical [tu003150]",
   "buttons": [
-    { "title": "Chilli Commerical", "action": [15,0,0,10] }
+    { "title": "Chilli Commerical", "action": [75,0,13,2] }
   ]
 },
 {
