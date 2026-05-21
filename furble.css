@@ -1,48 +1,7 @@
 @charset "utf-8";
 
-body {
-    background: #111;
-    color: white;
-    font-family: Arial, sans-serif;
-
-    animation: hueShift 30s linear infinite;
-}
-
-@keyframes hueShift {
-    from {
-        filter: hue-rotate(0deg);
-    }
-    to {
-        filter: hue-rotate(360deg);
-    }
-}
-
-.header {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-button {
-    background: #222;
-    color: white;
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 8px 12px;
-    margin: 4px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-section {
-    background: rgba(255,255,255,0.03);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
+:root {
+    --bg-primary: rgb(243, 0, 170);
 }
 
 body { font-family: sans }
