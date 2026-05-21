@@ -18,14 +18,14 @@
     "file": "tu003150.dlc",
     "title": "Commercial [tu003150]",
     "buttons": [
-      { "title": "Furble Roulette", "action": [75,0,8,3] }
+      { "title": "Commercial", "action": [75,0,8,3] }
     ]
   },
   {
     "file": "tu003410.dlc",
     "title": "No Idea [tu003410]",
     "buttons": [
-      { "title": "Chilli", "action": [75,0,8,4] }
+      { "title": "No Idea", "action": [75,0,8,4] }
     ]
   },
 
