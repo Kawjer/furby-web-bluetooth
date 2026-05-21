@@ -666,12 +666,54 @@ async function doConnect() {
     addGPListenCallback([0x21], onFurbySensorData);
     await checkActiveSlot();
 
-    await setAntennaColor(255,0,0);
-    await sleep(600);
-    await setAntennaColor(0,255,0);
-    await sleep(600);
-    await setAntennaColor(0,0,255);
-    await sleep(600);
+await setAntennaColor(255,0,0);
+await sleep(600);
+
+// red -> green (smooth transition)
+await setAntennaColor(229,26,0);
+await sleep(60);
+await setAntennaColor(204,51,0);
+await sleep(60);
+await setAntennaColor(178,76,0);
+await sleep(60);
+await setAntennaColor(153,102,0);
+await sleep(60);
+await setAntennaColor(127,127,0);
+await sleep(60);
+await setAntennaColor(102,153,0);
+await sleep(60);
+await setAntennaColor(76,178,0);
+await sleep(60);
+await setAntennaColor(51,204,0);
+await sleep(60);
+await setAntennaColor(26,229,0);
+await sleep(60);
+
+await setAntennaColor(0,255,0);
+await sleep(600);
+
+// green -> blue (smooth transition)
+await setAntennaColor(0,229,26);
+await sleep(60);
+await setAntennaColor(0,204,51);
+await sleep(60);
+await setAntennaColor(0,178,76);
+await sleep(60);
+await setAntennaColor(0,153,102);
+await sleep(60);
+await setAntennaColor(0,127,127);
+await sleep(60);
+await setAntennaColor(0,102,153);
+await sleep(60);
+await setAntennaColor(0,76,178);
+await sleep(60);
+await setAntennaColor(0,51,204);
+await sleep(60);
+await setAntennaColor(0,26,229);
+await sleep(60);
+
+await setAntennaColor(0,0,255);
+await sleep(600);
 
 
 }
