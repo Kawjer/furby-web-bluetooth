@@ -331,13 +331,3 @@
     "title": "Staging DLC 14 [tu011840]",
     "buttons": [{ "title": "tu011840", "action": [75,0,9,1] }]
   },
-  {
-    "file": "tu003150.dlc",
-    "title": "Commercial [tu003150]",
-    "buttons": [{ "title": "tu011100", "action": [75,0,9,0] }]
-  },
-  {
-    "file": "tu003410.dlc",
-    "title": "Prolly  Song [tu003410]",
-    "buttons": [{ "title": "tu011840", "action": [75,0,9,1] }]
-  },
