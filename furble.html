@@ -2,19 +2,19 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Furby Web Bluetooth</title>
+    <title>Kawjer's Furby Web Bluetooth [CUSTOM]</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href='furble.css'>
 </head>
 <body>
 
 <!-- for slide-in status messages -->
-<div id='status' class='ok'>Connected!</div>
+<div id='status' class='ok'>Connected to Furby!</div>
 
 <!-- menu button and menu -->
 <button id='hamburger'>☰</button>
 <div id='menu'>
-    <h2>FurBLE</h2>
+    <h2>FurBLE Custom</h2>
     <ul>
         <li><a href='#actions'>Actions</a></li>
         <li><a href='#misc'>Misc</a></li>
@@ -26,9 +26,9 @@
 
 
 <div class='header'>
-        <button id='connbtn' onclick='doConnectDisconnect()'>Connect</button>
-    <div><h1>FurBLE</h1>
-    <span id='state'>Not connected</span></div>
+        <button id='connbtn' onclick='doConnectDisconnect()'>Connect Furby</button>
+    <div><h1>FurBLE Custom</h1>
+    <span id='state'>Not connected to Furby</span></div>
     
 </div>
 
@@ -37,9 +37,13 @@
     <section id='misc'>
         <h2>Antenna Colour</h2>
         <div class='row'>
-            <button onclick='setAntennaColor(255, 0,0)'>Red</button>
-            <button onclick='setAntennaColor(0, 255,0)'>Green</button>
+            <button onclick='setAntennaColor(255, 0, 0)'>Red</button>
+            <button onclick='setAntennaColor(255, 127, 0)'>Orange</button>
+            <button onclick='setAntennaColor(255, 255, 0)'>Yellow</button>
+            <button onclick='setAntennaColor(0, 255, 0)'>Green</button>
             <button onclick='setAntennaColor(0, 0, 255)'>Blue</button>
+            <button onclick='setAntennaColor(75, 0, 130)'>Indigo</button>
+            <button onclick='setAntennaColor(148, 0, 211)'>Violet</button>
             <button onclick='setAntennaColor(255, 255, 255)'>White</button>
         </div>
     </section>
