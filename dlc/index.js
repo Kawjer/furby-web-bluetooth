@@ -331,17 +331,13 @@
     "title": "Staging DLC 14 [tu011840]",
     "buttons": [{ "title": "tu011840", "action": [75,0,9,1] }]
   },
-{
-  "file": "tu003150.dlc",
-  "title": "Chilli Commerical [tu003150]",
-  "buttons": [
-    { "title": "Chilli Commerical", "action": [75,0,13,2] }
-  ]
-},
-{
-  "file": "tu003410.dlc",
-  "title": "DLC [tu003410]",
-  "buttons": [
-    { "title": "tu003410", "action": [75,0,13,3] }
-  ]
-}
+  {
+    "file": "tu003150.dlc",
+    "title": "Commercial [tu003150]",
+    "buttons": [{ "title": "tu011100", "action": [75,0,9,0] }]
+  },
+  {
+    "file": "tu003410.dlc",
+    "title": "Prolly  Song [tu003410]",
+    "buttons": [{ "title": "tu011840", "action": [75,0,9,1] }]
+  },
