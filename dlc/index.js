@@ -7,7 +7,7 @@
         ]
     },
     { 
-        "file": "tu022130", 
+        "file": "tu022130.dlc", 
         "title": "Songs (studying it rn)",
         "buttons": [
             { "title": "ENGLISH ACTION 1", "action": [75,0,2,1] },
