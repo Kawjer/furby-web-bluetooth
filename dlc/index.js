@@ -34,8 +34,8 @@
         ]
     },
     {
-        "file": "tr002590.dlc", 
-        "title": "Glitchy DLC",
+        "file": "princlk.dlc", 
+        "title": "Princess Base Personality test (Locks up furby bad)",
         "buttons": [
             { "title": "No Action", "action": [75,0,4,4] }
         ]
