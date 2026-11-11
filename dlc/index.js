@@ -1,13 +1,13 @@
 [
-    { 
-        "file": "tu003150.dlc", 
+    {
+        "file": "tu003150.dlc",
         "title": "Commercial DLC",
         "buttons": [
             { "title": "Commercial", "action": [15,0,0,10] }
         ]
     },
-    { 
-        "file": "tu022130.dlc", 
+    {
+        "file": "tu022130.dlc",
         "title": "Songs (studying it rn)",
         "buttons": [
             { "title": "ENGLISH ACTION 1", "action": [75,0,2,1] },
@@ -34,14 +34,14 @@
         ]
     },
     {
-        "file": "princlk.dlc", 
+        "file": "princlk.dlc",
         "title": "Princess Base Personality test (Locks up furby bad)",
         "buttons": [
             { "title": "No Action", "action": [75,0,4,4] }
         ]
     },
     {
-        "file": "tu002560.dlc", 
+        "file": "tu002560.dlc",
         "title": "Ohmaigodpairate",
         "buttons": [
             { "title": "ENGLISH ACTION 1", "action": [75,0,2,1] },
@@ -68,16 +68,17 @@
         ]
     },
     {
-        "file": "ll8ah3.DLC", 
+        "file": "ll8ah3.DLC",
         "title": "EyeColorChange",
         "buttons": [
-            { "title": "Something", "action": [73,0,2,1] },
+            { "title": "Something", "action": [73,0,2,1] }
         ]
-            {
-        "file": "m9y3ei.DLC", 
+    },
+    {
+        "file": "m9y3ei.DLC",
         "title": "PiratePersonality",
         "buttons": [
-            { "title": "Ohmaigodidk", "action": [75,0,0,0] },
+            { "title": "Ohmaigodidk", "action": [75,0,0,0] }
         ]
     }
 ]
