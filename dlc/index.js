@@ -76,7 +76,7 @@
     },
     {
         "file": "PERSCYC2.DLC",
-        "title": "PersonalitySwitcher",
+        "title": "PersonalitySwitcher by FurbLord",
         "buttons": [
             { "title": "Ohmaigodidk", "action": [75,0,0,0] }
         ]
