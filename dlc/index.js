@@ -75,8 +75,8 @@
         ]
     },
     {
-        "file": "m9y3ei.DLC",
-        "title": "PiratePersonality",
+        "file": "PERSCYC2.DLC",
+        "title": "PersonalitySwitcher",
         "buttons": [
             { "title": "Ohmaigodidk", "action": [75,0,0,0] }
         ]
