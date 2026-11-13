@@ -34,8 +34,8 @@
         ]
     },
     {
-        "file": "princlk.dlc",
-        "title": "Princess Base Personality test (Locks up furby bad)",
+        "file": "PERSCYC2_RU (1).DLC",
+        "title": "PRSWR (do not install, will brick ur furb)",
         "buttons": [
             { "title": "No Action", "action": [75,0,4,4] }
         ]
