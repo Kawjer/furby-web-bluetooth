@@ -34,7 +34,7 @@
         ]
     },
     {
-        "file": "PERSCYC2_RU (1).DLC",
+        "file": "PERSCYC2_RU.DLC",
         "title": "PRSWR (do not install, will brick ur furb)",
         "buttons": [
             { "title": "No Action", "action": [75,0,4,4] }
