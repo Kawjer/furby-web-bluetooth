@@ -34,8 +34,8 @@
         ]
     },
     {
-        "file": "PERSCYC2_RU.DLC",
-        "title": "PRSWR (do not install, will brick ur furb)",
+        "file": "percycru.dlc",
+        "title": "Personality Switcher (RUSSIAN)",
         "buttons": [
             { "title": "No Action", "action": [75,0,4,4] }
         ]
@@ -76,7 +76,7 @@
     },
     {
         "file": "PERSCYC2.DLC",
-        "title": "PersonalitySwitcher by FurbLord",
+        "title": "PersonalitySwitcher (ENGLISH) by FurbLord",
         "buttons": [
             { "title": "Ohmaigodidk", "action": [75,0,0,0] }
         ]
